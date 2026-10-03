@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashabul Kahfi — Management Trainee Candidate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0F2C4C;
+    --navy-panel:#163A5E;
+    --navy-line: rgba(232,238,244,0.16);
+    --paper:#F2F4F6;
+    --paper-alt:#E6EAEE;
+    --ink:#16212E;
+    --ink-soft:#4B5763;
+    --accent:#4E90C7;
+    --accent-soft: rgba(78,144,199,0.18);
+    --accent2:#2C6188;
+    --line: rgba(22,33,46,0.14);
+    --radius: 3px;
+    --maxw: 1040px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk', sans-serif;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.02em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+
+  /* ---- NAV ---- */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:var(--navy-deep);
+    border-bottom:1px solid var(--navy-line);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+    color:#F4F2EB;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:15px;
+    text-decoration:none; color:#F4F2EB;
+  }
+  .brand .dot{width:8px;height:8px;background:var(--accent);border-radius:50%;display:inline-block;}
+  nav.links{display:flex; gap:28px;}
+  nav.links a{
+    font-size:13px; text-decoration:none; color:#C9CFD6;
+    font-family:'IBM Plex Mono', monospace; letter-spacing:0.03em;
+    padding:4px 2px; border-bottom:1px solid transparent;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  nav.links a:hover, nav.links a:focus-visible{color:#F4F2EB; border-color:var(--accent);}
+  nav.links a:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+  .nav-toggle{display:none;}
+
+  /* ---- HERO ---- */
+  .hero{
+    background:var(--navy-deep);
+    color:#F4F2EB;
+    padding:64px 0 56px;
+    position:relative;
+  }
+  .hero .wrap{display:grid; grid-template-columns:1fr auto; gap:40px; align-items:start;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.14em;
+    color:var(--accent); text-transform:uppercase; margin-bottom:18px; display:block;
+  }
+  .hero h1{
+    font-size:clamp(30px, 4.2vw, 46px);
+    font-weight:600;
+    line-height:1.12;
+    max-width:14ch;
+    margin-bottom:20px;
+  }
+  .hero p.sub{
+    max-width:52ch; color:#C9CFD6; font-size:16px; margin-bottom:32px;
+  }
+  .avatar{
+    width:220px; height:220px; border-radius:50%;
+    border:4px solid var(--accent);
+    overflow:hidden;
+    flex-shrink:0;
+    background:var(--navy-panel);
+    box-shadow:0 0 0 6px rgba(78,144,199,0.12);
+  }
+  .avatar img{width:100%; height:100%; object-fit:cover; display:block;}
+  .kpi-row{
+    display:flex; gap:0; flex-wrap:wrap;
+    border-top:1px solid var(--navy-line);
+    margin-top:8px;
+  }
+  .kpi{
+    padding:18px 28px 0 0; margin-right:28px;
+    border-right:1px solid var(--navy-line);
+  }
+  .kpi:last-child{border-right:none;}
+  .kpi .num{font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:600; color:#F4F2EB;}
+  .kpi .lbl{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:#9AA5B0; text-transform:uppercase; letter-spacing:0.06em; margin-top:4px;}
+
+  .cta-row{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
+  .btn{
+    font-family:'IBM Plex Mono', monospace; font-size:13px; letter-spacing:0.03em;
+    padding:12px 20px; border-radius:var(--radius);
+    text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+    border:1px solid transparent;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn-primary{background:var(--accent2); color:#F4F5F2; font-weight:500;}
+  .btn-primary:hover{transform:translateY(-1px);}
+  .btn-ghost{border-color:var(--navy-line); color:#F4F2EB;}
+  .btn-ghost:hover{border-color:var(--accent); color:var(--accent);}
+  .btn:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+
+  /* roster strip */
+  .roster-strip{margin-top:44px;}
+  .roster-strip .cap{font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9AA5B0; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px;}
+  .roster-track{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:2px;
+    background:var(--navy-line);
+  }
+  .roster-node{
+    background:var(--navy-panel); padding:14px 12px 16px;
+    position:relative;
+  }
+  .roster-node.current{background:var(--accent-soft);}
+  .roster-node .yr{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent); display:block; margin-bottom:6px;}
+  .roster-node .role{font-size:12.5px; color:#F4F2EB; line-height:1.3;}
+  .roster-node.current .role{color:#F4F2EB; font-weight:500;}
+
+  /* ---- SECTION generic ---- */
+  section{padding:60px 0;}
+  .section-head{margin-bottom:32px;}
+  .section-head .kicker{
+    font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--accent2);
+    text-transform:uppercase; letter-spacing:0.1em; display:block; margin-bottom:8px;
+  }
+  .section-head h2{font-size:clamp(22px,3vw,28px); font-weight:600; color:var(--ink);}
+  .section-alt{background:var(--paper-alt);}
+
+  /* profil */
+  .profil-text{max-width:66ch; font-size:16px; color:var(--ink-soft);}
+  .profil-text strong{color:var(--ink); font-weight:600;}
+
+  /* kompetensi grid */
+  .comp-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  .comp-card{background:var(--paper-alt); padding:22px 20px;}
+  .section-alt .comp-card{background:var(--paper);}
+  .comp-card .tag{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent2); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:10px;}
+  .comp-card h3{font-size:15.5px; font-weight:600; margin-bottom:8px; color:var(--ink);}
+  .comp-card p{font-size:13.5px; color:var(--ink-soft); margin:0;}
+
+  /* pengalaman - roster cards on navy panel */
+  .exp-section{background:var(--navy-panel); color:#F4F2EB;}
+  .exp-section .section-head h2{color:#F4F2EB;}
+  .exp-section .kicker{color:var(--accent);}
+  .exp-item{
+    border-top:1px solid var(--navy-line);
+    padding:24px 0;
+    display:grid; grid-template-columns:170px 1fr; gap:24px;
+  }
+  .exp-item:last-child{border-bottom:1px solid var(--navy-line);}
+  .exp-item .when{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#9AA5B0; padding-top:2px;}
+  .exp-item .when .current-mark{color:var(--accent);}
+  .exp-role{font-size:17px; font-weight:600; color:#F4F2EB; margin-bottom:2px;}
+  .exp-co{font-size:13.5px; color:#9AA5B0; margin-bottom:12px;}
+  .exp-item ul{margin:0; padding-left:18px; color:#C9CFD6; font-size:14.5px;}
+  .exp-item li{margin-bottom:6px;}
+  .exp-item li::marker{color:var(--accent);}
+  .exp-sub{
+    margin-top:14px; padding:14px 16px; border-left:2px solid var(--accent);
+    background:rgba(226,166,59,0.06);
+  }
+  .exp-sub .sub-title{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--accent); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;}
+  .exp-sub p{margin:0; font-size:13.5px; color:#C9CFD6;}
+
+  /* pendidikan / organisasi */
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
+  .list-plain{list-style:none; margin:0; padding:0;}
+  .list-plain li{
+    padding:14px 0; border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; gap:16px; font-size:14.5px;
+  }
+  .list-plain li:last-child{border-bottom:1px solid var(--line);}
+  .list-plain .place{color:var(--ink-soft); font-size:13px; display:block; margin-top:2px;}
+  .list-plain .when{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--accent2); white-space:nowrap; padding-top:1px;}
+
+  /* footer / kontak */
+  footer{
+    background:var(--navy-deep); color:#F4F2EB; padding:64px 0 40px;
+  }
+  footer .kicker{color:var(--accent); font-family:'IBM Plex Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.1em; display:block; margin-bottom:12px;}
+  footer h2{font-size:clamp(24px,3.4vw,34px); font-weight:600; max-width:16ch; margin-bottom:28px;}
+  .contact-grid{display:flex; gap:40px; flex-wrap:wrap; border-top:1px solid var(--navy-line); padding-top:24px;}
+  .contact-item .lbl{font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9AA5B0; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;}
+  .contact-item a, .contact-item span{font-size:15px; color:#F4F2EB; text-decoration:none;}
+  .contact-item a:hover{color:var(--accent);}
+  .foot-note{margin-top:40px; font-size:12px; color:#7C8794; font-family:'IBM Plex Mono',monospace;}
+
+  @media (max-width: 760px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .avatar{order:-1; width:160px; height:160px;}
+    .comp-grid{grid-template-columns:1fr;}
+    .roster-track{grid-template-columns:repeat(2,1fr);}
+    .exp-item{grid-template-columns:1fr; gap:8px;}
+    .two-col{grid-template-columns:1fr; gap:12px;}
+    nav.links{display:none;}
+    .kpi{padding-right:0; margin-right:20px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top"><span class="dot"></span>ASHABUL KAHFI</a>
+    <nav class="links">
+      <a href="#profil">Profil</a>
+      <a href="#kompetensi">Kompetensi</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#kontak">Kontak</a>
+      <a href="index.html" style="color:var(--accent); border-color:var(--navy-line);">HR/HC</a>
+      <a href="operations.html" style="color:var(--accent); border-color:var(--navy-line);">Operations</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Management Trainee Candidate</span>
+      <h1>Empat peran berbeda dalam 5 tahun — selalu dipercaya naik level.</h1>
+      <p class="sub">Ashabul Kahfi — lulusan S1 Manajemen dengan rekam jejak proven career progression: dari operator mesin, admin lapangan, admin SDM &amp; sistem, hingga Acting Supervisor atas 1 shift produksi berisi 85 orang. Siap mengikuti program Management Trainee lintas departemen.</p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:ashabulkahfi1986@gmail.com">Kirim Email</a>
+        <a class="btn btn-ghost" href="tel:+6283830798271">+62 838 3079 8271</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/ashabul-kahfi-444125329" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="CV-Ashabul-Kahfi-MT.pdf" target="_blank" rel="noopener">Unduh CV</a>
+      </div>
+
+      <div class="kpi-row">
+        <div class="kpi"><div class="num">4</div><div class="lbl">Peran Berbeda Dijalani</div></div>
+        <div class="kpi"><div class="num">85</div><div class="lbl">Orang Dipimpin / Shift</div></div>
+        <div class="kpi"><div class="num">5+</div><div class="lbl">Tahun Pengalaman</div></div>
+      </div>
+
+      <div class="roster-strip">
+        <span class="cap">Jejak Karier</span>
+        <div class="roster-track">
+          <div class="roster-node"><span class="yr">2019</span><span class="role">Magang — K3 &amp; Inventory LPG</span></div>
+          <div class="roster-node"><span class="yr">2021</span><span class="role">Operator Produksi</span></div>
+          <div class="roster-node"><span class="yr">2023</span><span class="role">Admin Lapangan Packing &amp; FG</span></div>
+          <div class="roster-node"><span class="yr">2024</span><span class="role">Admin Absensi &amp; Support Produksi</span></div>
+          <div class="roster-node current"><span class="yr">2025</span><span class="role">Acting Supervisor Shift Produksi</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="avatar"><img src="foto-ashabul-kahfi.jpg" alt="Foto Ashabul Kahfi"></div>
+  </div>
+</section>
+
+<section id="profil">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Profil</span>
+      <h2>Latar belakang singkat</h2>
+    </div>
+    <p class="profil-text">
+      Lulusan <strong>S1 Manajemen (Universitas Terbuka)</strong> dengan pengalaman lebih dari 5 tahun di lingkungan manufaktur berskala besar, dengan rekam jejak <em>proven career progression</em> dari level operasional lapangan hingga dipercaya memegang peran administratif sistem enterprise dan kepemimpinan operasional. Terbiasa berpindah fungsi — dari operator mesin, admin lapangan, admin SDM &amp; sistem, hingga acting supervisor — menunjukkan kemampuan belajar cepat dan adaptasi lintas fungsi. Berorientasi pada <strong>people leadership</strong>, pengambilan keputusan berbasis data, dan kepatuhan proses (K3/SOP).
+    </p>
+  </div>
+</section>
+
+<section class="section-alt" id="kompetensi">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Kompetensi Utama</span>
+      <h2>Yang saya kuasai</h2>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-card">
+        <span class="tag">Leadership</span>
+        <h3>Leadership & People Management</h3>
+        <p>Memimpin &amp; mengawasi 1 shift regu produksi (85 orang) sebagai Acting Supervisor.</p>
+      </div>
+      <div class="comp-card">
+        <span class="tag">Versatility</span>
+        <h3>Cross-Functional Versatility</h3>
+        <p>Pernah menjalani 4 peran berbeda: operator, admin lapangan, admin SDM &amp; sistem, acting supervisor.</p>
+      </div>
+      <div class="comp-card">
+        <span class="tag">Analytics</span>
+        <h3>Data-Driven Decision Making</h3>
+        <p>Analisis downtime &amp; OEE, visualisasi Pivot Table untuk laporan evaluasi manajemen.</p>
+      </div>
+      <div class="comp-card">
+        <span class="tag">Systems</span>
+        <h3>Systems Proficiency</h3>
+        <p>Oracle E-Business Suite, Pro-Int HRIS, OTLINK, Microsoft Office, Google Workspace.</p>
+      </div>
+      <div class="comp-card">
+        <span class="tag">Communication</span>
+        <h3>Communication & Problem Solving</h3>
+        <p>Complaint handling, koordinasi lintas departemen, public speaking.</p>
+      </div>
+      <div class="comp-card">
+        <span class="tag">Compliance</span>
+        <h3>Process & Compliance</h3>
+        <p>SOP produksi, kepatuhan K3, rekonsiliasi stok, audit dokumen pabrik.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="exp-section" id="pengalaman">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Pengalaman Kerja</span>
+      <h2>Riwayat penugasan</h2>
+    </div>
+
+    <div class="exp-item">
+      <div class="when">Apr 2024 — <span class="current-mark">Sekarang</span></div>
+      <div>
+        <div class="exp-role">Admin Absensi &amp; Support Produksi</div>
+        <div class="exp-co">PT Ultra Prima Abadi — Jombang, Jawa Timur</div>
+        <ul>
+          <li>Merangkap fungsi administrasi SDM (payroll, absensi, complaint handling) sekaligus support operasional produksi — menunjukkan kemampuan menangani beban kerja lintas fungsi secara bersamaan.</li>
+          <li>Mengatur penjadwalan kerja (shift scheduling) &amp; mengawasi operasional harian tim kebersihan 3 shift.</li>
+          <li>Mengolah data downtime mesin &amp; OEE, menyusun visualisasi Pivot Table untuk laporan evaluasi manajemen.</li>
+          <li>Mengelola alur pengadaan barang operasional &amp; K3 (PR &amp; PO) menggunakan Oracle E-Business Suite.</li>
+          <li>Mengarsipkan dokumen SDM &amp; operasional: laporan produksi, formulir komplain, dokumen audit pabrik.</li>
+        </ul>
+
+        <div class="exp-sub">
+          <div class="sub-title">Penugasan Khusus · Jun–Jul 2025</div>
+          <p><strong>Acting Supervisor Shift Produksi</strong> — dipercaya memimpin, menjadwalkan, dan mengawasi operasional 1 shift regu produksi (85 orang), bukti kesiapan memikul tanggung jawab kepemimpinan berskala besar dalam waktu singkat.</p>
+        </div>
+        <div class="exp-sub">
+          <div class="sub-title">Penugasan Khusus · Agt–Okt 2024</div>
+          <p><strong>Acting Production System Admin (Oracle EBS)</strong> — dipercaya mengelola input &amp; integrasi data produksi, memimpin rekonsiliasi stok fisik vs sistem, menunjukkan kecepatan belajar sistem baru.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="when">Jan 2023 — Apr 2024</div>
+      <div>
+        <div class="exp-role">Admin Lapangan Bahan Packing &amp; Finished Goods</div>
+        <div class="exp-co">PT Ultra Prima Abadi — Jombang, Jawa Timur</div>
+        <ul>
+          <li>Mengelola stok harian bahan kemas (packaging material) &amp; mengajukan permintaan (requisition) ke gudang PPIC saat batas aman stok minimum.</li>
+          <li>Melakukan stok opname harian bahan kemas serta barang jadi (Finished Goods) antara fisik di lapangan dengan pencatatan sistem.</li>
+          <li>Menghitung inventaris barang jadi &amp; memproses transfer fisik dan sistem ke gudang logistik.</li>
+          <li>Mengelola pengembalian (return) kelebihan bahan kemas saat terjadi perubahan varian, gramasi, atau stop production.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="when">Jun 2021 — Jan 2023</div>
+      <div>
+        <div class="exp-role">Operator Produksi</div>
+        <div class="exp-co">PT Ultra Prima Abadi — Jombang, Jawa Timur</div>
+        <ul>
+          <li>Mengoperasikan mesin produksi (carton box, ballmill, enrober, oven, packing machine) secara aman &amp; efisien sesuai penempatan tugas harian.</li>
+          <li>Melakukan setup &amp; penyesuaian (adjustment) parameter mesin sesuai spesifikasi standar produk dan QC.</li>
+          <li>Memantau performa mesin, tindakan korektif awal saat timbul kendala, &amp; mencatat data hasil produksi shift secara presisi.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="when">Okt 2019 — Nov 2019</div>
+      <div>
+        <div class="exp-role">Magang</div>
+        <div class="exp-co">PT Purbaya Bagelen Mandiri — Tuban, Jawa Timur</div>
+        <ul>
+          <li>Melakukan pemeriksaan &amp; pemeliharaan rutin alat pemadam api ringan (APAR) sesuai standar K3.</li>
+          <li>Memindah &amp; mengawasi pemindahan Liquefied Petroleum Gas (LPG) dari truk pengirim ke tangki penyimpanan.</li>
+          <li>Melakukan inventory check harian stok LPG serta mencatat riwayat pemindahan kendaraan pengangkut.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pendidikan">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Pendidikan &amp; Organisasi</span>
+      <h2>Latar belakang akademik</h2>
+    </div>
+    <div class="two-col">
+      <div>
+        <h3 style="font-size:14px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-soft); margin-bottom:12px; font-family:'IBM Plex Mono',monospace;">Pendidikan</h3>
+        <ul class="list-plain">
+          <li>
+            <div><strong>S1 Program Studi Manajemen</strong><span class="place">Universitas Terbuka</span></div>
+            <span class="when">2022–2026</span>
+          </li>
+          <li>
+            <div><strong>Teknik Pengolahan Minyak, Gas &amp; Petrokimia</strong><span class="place">SMK Negeri 1 Tuban</span></div>
+            <span class="when">2019–2021</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:14px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-soft); margin-bottom:12px; font-family:'IBM Plex Mono',monospace;">Organisasi</h3>
+        <ul class="list-plain">
+          <li>
+            <div><strong>Sekretaris</strong><span class="place">IPNU Desa Leranwetan</span></div>
+            <span class="when">2019–2021</span>
+          </li>
+          <li>
+            <div><strong>Anggota Kebersihan</strong><span class="place">Peduli Lingkungan Dusun Karangdowo</span></div>
+            <span class="when">2019–2021</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="kontak">
+  <div class="wrap">
+    <span class="kicker">Kontak</span>
+    <h2>Terbuka untuk program Management Trainee lintas departemen.</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="lbl">Email</div>
+        <a href="mailto:ashabulkahfi1986@gmail.com">ashabulkahfi1986@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <div class="lbl">Telepon</div>
+        <a href="tel:+6283830798271">+62 838 3079 8271</a>
+      </div>
+      <div class="contact-item">
+        <div class="lbl">Lokasi</div>
+        <span>Tuban, Jawa Timur</span>
+      </div>
+      <div class="contact-item">
+        <div class="lbl">LinkedIn</div>
+        <a href="https://www.linkedin.com/in/ashabul-kahfi-444125329" target="_blank" rel="noopener">linkedin.com/in/ashabul-kahfi</a>
+      </div>
+      <div class="contact-item">
+        <div class="lbl">CV</div>
+        <a href="CV-Ashabul-Kahfi-MT.pdf" target="_blank" rel="noopener">Unduh PDF</a>
+      </div>
+      <div class="contact-item">
+        <div class="lbl">Bahasa</div>
+        <span>Indonesia (Native), Inggris (Intermediate)</span>
+      </div>
+    </div>
+    <div class="foot-note">© 2026 Ashabul Kahfi — Halaman ini dibuat sebagai portofolio profesional. Lihat juga versi <a href="index.html" style="color:var(--accent);">Human Resources / Human Capital</a> &middot; <a href="operations.html" style="color:var(--accent);">Production / Manufacturing Operations</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

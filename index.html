@@ -2,485 +2,185 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ashabul Kahfi — Management Trainee Candidate</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashabul Kahfi | Management Trainee Candidate</title>
+<meta name="description" content="Portofolio Ashabul Kahfi: empat peran dalam lima tahun di manufaktur, dari operator mesin hingga Acting Supervisor atas 85+ orang. Siap mengikuti program Management Trainee.">
+<meta name="theme-color" content="#0F2C4C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ashabul Kahfi | Management Trainee Candidate">
+<meta property="og:description" content="Empat peran dalam lima tahun, dari operator mesin hingga Acting Supervisor. Build, Grow, Serve.">
+<meta property="og:image" content="https://kahfi-ashabul.github.io/my-portfolio-mt/assets/foto/profil.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F2C4C'/%3E%3Ccircle cx='46' cy='18' r='6' fill='%234E90C7'/%3E%3Ctext x='10' y='46' font-family='Arial' font-weight='700' font-size='30' fill='white'%3EAK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --navy-deep:#0F2C4C;
-    --navy-panel:#163A5E;
-    --navy-line: rgba(232,238,244,0.16);
-    --paper:#F2F4F6;
-    --paper-alt:#E6EAEE;
-    --ink:#16212E;
-    --ink-soft:#4B5763;
-    --accent:#4E90C7;
-    --accent-soft: rgba(78,144,199,0.18);
-    --accent2:#2C6188;
-    --line: rgba(22,33,46,0.14);
-    --radius: 3px;
-    --maxw: 1040px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
-  }
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'IBM Plex Sans', sans-serif;
-    font-size:16px;
-    line-height:1.6;
-  }
-  h1,h2,h3{
-    font-family:'Space Grotesk', sans-serif;
-    margin:0;
-    letter-spacing:-0.01em;
-  }
-  .mono{
-    font-family:'IBM Plex Mono', monospace;
-    letter-spacing:0.02em;
-  }
-  a{color:inherit;}
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
-
-  /* ---- NAV ---- */
-  header.site-nav{
-    position:sticky; top:0; z-index:50;
-    background:var(--navy-deep);
-    border-bottom:1px solid var(--navy-line);
-  }
-  .nav-inner{
-    max-width:var(--maxw); margin:0 auto; padding:16px 28px;
-    display:flex; align-items:center; justify-content:space-between;
-    color:#F4F2EB;
-  }
-  .brand{
-    display:flex; align-items:center; gap:10px;
-    font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:15px;
-    text-decoration:none; color:#F4F2EB;
-  }
-  .brand .dot{width:8px;height:8px;background:var(--accent);border-radius:50%;display:inline-block;}
-  nav.links{display:flex; gap:28px;}
-  nav.links a{
-    font-size:13px; text-decoration:none; color:#C9CFD6;
-    font-family:'IBM Plex Mono', monospace; letter-spacing:0.03em;
-    padding:4px 2px; border-bottom:1px solid transparent;
-    transition:color .15s ease, border-color .15s ease;
-  }
-  nav.links a:hover, nav.links a:focus-visible{color:#F4F2EB; border-color:var(--accent);}
-  nav.links a:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
-  .nav-toggle{display:none;}
-
-  /* ---- HERO ---- */
-  .hero{
-    background:var(--navy-deep);
-    color:#F4F2EB;
-    padding:64px 0 56px;
-    position:relative;
-  }
-  .hero .wrap{display:grid; grid-template-columns:1fr auto; gap:40px; align-items:start;}
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.14em;
-    color:var(--accent); text-transform:uppercase; margin-bottom:18px; display:block;
-  }
-  .hero h1{
-    font-size:clamp(30px, 4.2vw, 46px);
-    font-weight:600;
-    line-height:1.12;
-    max-width:14ch;
-    margin-bottom:20px;
-  }
-  .hero p.sub{
-    max-width:52ch; color:#C9CFD6; font-size:16px; margin-bottom:32px;
-  }
-  .avatar{
-    width:220px; height:220px; border-radius:50%;
-    border:4px solid var(--accent);
-    overflow:hidden;
-    flex-shrink:0;
-    background:var(--navy-panel);
-    box-shadow:0 0 0 6px rgba(78,144,199,0.12);
-  }
-  .avatar img{width:100%; height:100%; object-fit:cover; display:block;}
-  .kpi-row{
-    display:flex; gap:0; flex-wrap:wrap;
-    border-top:1px solid var(--navy-line);
-    margin-top:8px;
-  }
-  .kpi{
-    padding:18px 28px 0 0; margin-right:28px;
-    border-right:1px solid var(--navy-line);
-  }
-  .kpi:last-child{border-right:none;}
-  .kpi .num{font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:600; color:#F4F2EB;}
-  .kpi .lbl{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:#9AA5B0; text-transform:uppercase; letter-spacing:0.06em; margin-top:4px;}
-
-  .cta-row{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
-  .btn{
-    font-family:'IBM Plex Mono', monospace; font-size:13px; letter-spacing:0.03em;
-    padding:12px 20px; border-radius:var(--radius);
-    text-decoration:none; display:inline-flex; align-items:center; gap:8px;
-    border:1px solid transparent;
-    transition:transform .15s ease, background .15s ease;
-  }
-  .btn-primary{background:var(--accent2); color:#F4F5F2; font-weight:500;}
-  .btn-primary:hover{transform:translateY(-1px);}
-  .btn-ghost{border-color:var(--navy-line); color:#F4F2EB;}
-  .btn-ghost:hover{border-color:var(--accent); color:var(--accent);}
-  .btn:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
-
-  /* roster strip */
-  .roster-strip{margin-top:44px;}
-  .roster-strip .cap{font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9AA5B0; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px;}
-  .roster-track{
-    display:grid; grid-template-columns:repeat(5,1fr); gap:2px;
-    background:var(--navy-line);
-  }
-  .roster-node{
-    background:var(--navy-panel); padding:14px 12px 16px;
-    position:relative;
-  }
-  .roster-node.current{background:var(--accent-soft);}
-  .roster-node .yr{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent); display:block; margin-bottom:6px;}
-  .roster-node .role{font-size:12.5px; color:#F4F2EB; line-height:1.3;}
-  .roster-node.current .role{color:#F4F2EB; font-weight:500;}
-
-  /* ---- SECTION generic ---- */
-  section{padding:60px 0;}
-  .section-head{margin-bottom:32px;}
-  .section-head .kicker{
-    font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--accent2);
-    text-transform:uppercase; letter-spacing:0.1em; display:block; margin-bottom:8px;
-  }
-  .section-head h2{font-size:clamp(22px,3vw,28px); font-weight:600; color:var(--ink);}
-  .section-alt{background:var(--paper-alt);}
-
-  /* profil */
-  .profil-text{max-width:66ch; font-size:16px; color:var(--ink-soft);}
-  .profil-text strong{color:var(--ink); font-weight:600;}
-
-  /* kompetensi grid */
-  .comp-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
-    background:var(--line); border:1px solid var(--line);
-  }
-  .comp-card{background:var(--paper-alt); padding:22px 20px;}
-  .section-alt .comp-card{background:var(--paper);}
-  .comp-card .tag{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent2); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:10px;}
-  .comp-card h3{font-size:15.5px; font-weight:600; margin-bottom:8px; color:var(--ink);}
-  .comp-card p{font-size:13.5px; color:var(--ink-soft); margin:0;}
-
-  /* pengalaman - roster cards on navy panel */
-  .exp-section{background:var(--navy-panel); color:#F4F2EB;}
-  .exp-section .section-head h2{color:#F4F2EB;}
-  .exp-section .kicker{color:var(--accent);}
-  .exp-item{
-    border-top:1px solid var(--navy-line);
-    padding:24px 0;
-    display:grid; grid-template-columns:170px 1fr; gap:24px;
-  }
-  .exp-item:last-child{border-bottom:1px solid var(--navy-line);}
-  .exp-item .when{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#9AA5B0; padding-top:2px;}
-  .exp-item .when .current-mark{color:var(--accent);}
-  .exp-role{font-size:17px; font-weight:600; color:#F4F2EB; margin-bottom:2px;}
-  .exp-co{font-size:13.5px; color:#9AA5B0; margin-bottom:12px;}
-  .exp-item ul{margin:0; padding-left:18px; color:#C9CFD6; font-size:14.5px;}
-  .exp-item li{margin-bottom:6px;}
-  .exp-item li::marker{color:var(--accent);}
-  .exp-sub{
-    margin-top:14px; padding:14px 16px; border-left:2px solid var(--accent);
-    background:rgba(226,166,59,0.06);
-  }
-  .exp-sub .sub-title{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--accent); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;}
-  .exp-sub p{margin:0; font-size:13.5px; color:#C9CFD6;}
-
-  /* pendidikan / organisasi */
-  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
-  .list-plain{list-style:none; margin:0; padding:0;}
-  .list-plain li{
-    padding:14px 0; border-top:1px solid var(--line);
-    display:flex; justify-content:space-between; gap:16px; font-size:14.5px;
-  }
-  .list-plain li:last-child{border-bottom:1px solid var(--line);}
-  .list-plain .place{color:var(--ink-soft); font-size:13px; display:block; margin-top:2px;}
-  .list-plain .when{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--accent2); white-space:nowrap; padding-top:1px;}
-
-  /* footer / kontak */
-  footer{
-    background:var(--navy-deep); color:#F4F2EB; padding:64px 0 40px;
-  }
-  footer .kicker{color:var(--accent); font-family:'IBM Plex Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.1em; display:block; margin-bottom:12px;}
-  footer h2{font-size:clamp(24px,3.4vw,34px); font-weight:600; max-width:16ch; margin-bottom:28px;}
-  .contact-grid{display:flex; gap:40px; flex-wrap:wrap; border-top:1px solid var(--navy-line); padding-top:24px;}
-  .contact-item .lbl{font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9AA5B0; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;}
-  .contact-item a, .contact-item span{font-size:15px; color:#F4F2EB; text-decoration:none;}
-  .contact-item a:hover{color:var(--accent);}
-  .foot-note{margin-top:40px; font-size:12px; color:#7C8794; font-family:'IBM Plex Mono',monospace;}
-
-  @media (max-width: 760px){
-    .hero .wrap{grid-template-columns:1fr;}
-    .avatar{order:-1; width:160px; height:160px;}
-    .comp-grid{grid-template-columns:1fr;}
-    .roster-track{grid-template-columns:repeat(2,1fr);}
-    .exp-item{grid-template-columns:1fr; gap:8px;}
-    .two-col{grid-template-columns:1fr; gap:12px;}
-    nav.links{display:none;}
-    .kpi{padding-right:0; margin-right:20px;}
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+<noscript><style>html.js .rv{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
+<a class="skip" href="#main">Lewati ke konten utama</a>
+<div class="progress" aria-hidden="true"><span id="progress"></span></div>
 
-<header class="site-nav">
-  <div class="nav-inner">
-    <a class="brand" href="#top"><span class="dot"></span>ASHABUL KAHFI</a>
-    <nav class="links">
-      <a href="#profil">Profil</a>
-      <a href="#kompetensi">Kompetensi</a>
-      <a href="#pengalaman">Pengalaman</a>
-      <a href="#pendidikan">Pendidikan</a>
-      <a href="#kontak">Kontak</a>
+<!-- Animasi pembuka (sekali per kunjungan) -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div>
+    <div class="words"><span><b style="--i:0">Build</b></span><span><b style="--i:1">Grow</b></span><span><b style="--i:2">Serve</b></span></div>
+    <div class="line"></div>
+  </div>
+</div>
+
+<!-- Tirai transisi saat klik menu -->
+<div class="shutter" id="shutter" aria-hidden="true">
+  <i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i>
+  <div class="lbl"><small id="sh-num">01</small><b id="sh-name">Profil</b><span class="bar"></span></div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#beranda" data-nav><span class="dot"></span><span class="name">ASHABUL KAHFI</span><span class="sr">Ke atas</span></a>
+    <nav class="links" id="links" aria-label="Navigasi utama">
+      <a href="#profil" data-nav>Profil</a>
+      <a href="#prinsip" data-nav>Prinsip</a>
+      <a href="#kompetensi" data-nav>Kompetensi</a>
+      <a href="#pengalaman" data-nav>Pengalaman</a>
+      <a href="#galeri" data-nav id="nav-galeri" class="gone">Galeri</a>
+      <a href="#pendidikan" data-nav>Pendidikan</a>
+      <a href="#kontak" data-nav>Kontak</a>
     </nav>
+    <button class="burger" id="burger" type="button" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<section class="hero" id="top">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">Management Trainee Candidate</span>
-      <h1>Empat peran berbeda dalam 5 tahun — selalu dipercaya naik level.</h1>
-      <p class="sub">Ashabul Kahfi — lulusan S1 Manajemen dengan rekam jejak proven career progression: dari operator mesin, admin lapangan, admin SDM &amp; sistem, hingga Acting Supervisor atas 1 shift produksi berisi 85 orang. Siap mengikuti program Management Trainee lintas departemen.</p>
+<main id="main">
 
-      <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:ashabulkahfi1986@gmail.com">Kirim Email</a>
-        <a class="btn btn-ghost" href="tel:+6283830798271">+62 838 3079 8271</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/ashabul-kahfi-444125329" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn-ghost" href="CV-Ashabul-Kahfi-MT.pdf" target="_blank" rel="noopener">Unduh CV</a>
+  <!-- 00 BERANDA -->
+  <section class="sec hero" id="beranda" data-name="Beranda" data-num="00">
+    <div class="hero-photo" id="hero-photo"><img id="hero-img" alt="" decoding="async" fetchpriority="high"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-dots"></div>
+    <svg class="arcs" id="arcs" viewBox="0 0 800 800" aria-hidden="true">
+      <circle class="fill" cx="800" cy="400" r="240"/>
+      <circle pathLength="1" style="--i:0" cx="800" cy="400" r="240"/>
+      <circle pathLength="1" style="--i:1" cx="800" cy="400" r="320"/>
+      <circle pathLength="1" style="--i:2" cx="800" cy="400" r="400" opacity=".75"/>
+      <circle pathLength="1" style="--i:3" cx="800" cy="400" r="480" opacity=".5"/>
+      <circle pathLength="1" style="--i:4" cx="800" cy="400" r="560" opacity=".3"/>
+    </svg>
+    <div class="wrap hero-in">
+      <div class="hero-copy" id="hero-copy">
+        <span class="eyebrow" id="h-eyebrow"></span>
+        <h1 id="h-headline"></h1>
+        <p class="sub" id="h-sub"></p>
+        <div class="cta" id="h-cta"></div>
+        <div class="stats" id="h-stats"></div>
       </div>
-
-      <div class="kpi-row">
-        <div class="kpi"><div class="num">4</div><div class="lbl">Peran Berbeda Dijalani</div></div>
-        <div class="kpi"><div class="num">85</div><div class="lbl">Orang Dipimpin / Shift</div></div>
-        <div class="kpi"><div class="num">5+</div><div class="lbl">Tahun Pengalaman</div></div>
-      </div>
-
-      <div class="roster-strip">
-        <span class="cap">Jejak Karier</span>
-        <div class="roster-track">
-          <div class="roster-node"><span class="yr">2019</span><span class="role">Magang — K3 &amp; Inventory LPG</span></div>
-          <div class="roster-node"><span class="yr">2021</span><span class="role">Operator Produksi</span></div>
-          <div class="roster-node"><span class="yr">2023</span><span class="role">Admin Lapangan Packing &amp; FG</span></div>
-          <div class="roster-node"><span class="yr">2024</span><span class="role">Admin Absensi &amp; Support Produksi</span></div>
-          <div class="roster-node current"><span class="yr">2025</span><span class="role">Acting Supervisor Shift Produksi</span></div>
+      <div class="hero-side">
+        <div class="portrait">
+          <svg class="ring2" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49" vector-effect="non-scaling-stroke"/></svg>
+          <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49" vector-effect="non-scaling-stroke"/></svg>
+          <div class="avatar" id="avatar">AK<img id="avatar-img" alt="Foto Ashabul Kahfi"></div>
+          <span class="chip c1">Build</span><span class="chip c2">Grow</span><span class="chip c3">Serve</span>
         </div>
       </div>
     </div>
-    <div class="avatar"><img src="foto-ashabul-kahfi.jpg" alt="Foto Ashabul Kahfi"></div>
-  </div>
-</section>
+    <div class="cue" aria-hidden="true"></div>
+    <div class="ticker" aria-hidden="true"><div class="track" id="ticker"></div></div>
+  </section>
 
-<section id="profil">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">Profil</span>
-      <h2>Latar belakang singkat</h2>
-    </div>
-    <p class="profil-text">
-      Lulusan <strong>S1 Manajemen (Universitas Terbuka)</strong> dengan pengalaman lebih dari 5 tahun di lingkungan manufaktur berskala besar, dengan rekam jejak <em>proven career progression</em> dari level operasional lapangan hingga dipercaya memegang peran administratif sistem enterprise dan kepemimpinan operasional. Terbiasa berpindah fungsi — dari operator mesin, admin lapangan, admin SDM &amp; sistem, hingga acting supervisor — menunjukkan kemampuan belajar cepat dan adaptasi lintas fungsi. Berorientasi pada <strong>people leadership</strong>, pengambilan keputusan berbasis data, dan kepatuhan proses (K3/SOP).
-    </p>
-  </div>
-</section>
-
-<section class="section-alt" id="kompetensi">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">Kompetensi Utama</span>
-      <h2>Yang saya kuasai</h2>
-    </div>
-    <div class="comp-grid">
-      <div class="comp-card">
-        <span class="tag">Leadership</span>
-        <h3>Leadership & People Management</h3>
-        <p>Memimpin &amp; mengawasi 1 shift regu produksi (85 orang) sebagai Acting Supervisor.</p>
-      </div>
-      <div class="comp-card">
-        <span class="tag">Versatility</span>
-        <h3>Cross-Functional Versatility</h3>
-        <p>Pernah menjalani 4 peran berbeda: operator, admin lapangan, admin SDM &amp; sistem, acting supervisor.</p>
-      </div>
-      <div class="comp-card">
-        <span class="tag">Analytics</span>
-        <h3>Data-Driven Decision Making</h3>
-        <p>Analisis downtime &amp; OEE, visualisasi Pivot Table untuk laporan evaluasi manajemen.</p>
-      </div>
-      <div class="comp-card">
-        <span class="tag">Systems</span>
-        <h3>Systems Proficiency</h3>
-        <p>Oracle E-Business Suite, Pro-Int HRIS, OTLINK, Microsoft Office, Google Workspace.</p>
-      </div>
-      <div class="comp-card">
-        <span class="tag">Communication</span>
-        <h3>Communication & Problem Solving</h3>
-        <p>Complaint handling, koordinasi lintas departemen, public speaking.</p>
-      </div>
-      <div class="comp-card">
-        <span class="tag">Compliance</span>
-        <h3>Process & Compliance</h3>
-        <p>PDCA / Continuous Improvement, SOP produksi, kepatuhan K3, rekonsiliasi stok, audit dokumen pabrik.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="exp-section" id="pengalaman">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">Pengalaman Kerja</span>
-      <h2>Riwayat penugasan</h2>
-    </div>
-
-    <div class="exp-item">
-      <div class="when">Apr 2024 — <span class="current-mark">Sekarang</span></div>
-      <div>
-        <div class="exp-role">Admin Absensi &amp; Support Produksi</div>
-        <div class="exp-co">PT Ultra Prima Abadi — Jombang, Jawa Timur</div>
-        <ul>
-          <li>Merangkap fungsi administrasi SDM (payroll, absensi, complaint handling) sekaligus support operasional produksi — menunjukkan kemampuan menangani beban kerja lintas fungsi secara bersamaan.</li>
-          <li>Mengatur penjadwalan kerja (shift scheduling) &amp; mengawasi operasional harian tim kebersihan 3 shift.</li>
-          <li>Mengolah data downtime mesin &amp; OEE, menyusun visualisasi Pivot Table untuk laporan evaluasi manajemen.</li>
-          <li>Mengelola alur pengadaan barang operasional &amp; K3 (PR &amp; PO) menggunakan Oracle E-Business Suite.</li>
-          <li>Mengarsipkan dokumen SDM &amp; operasional: laporan produksi, formulir komplain, dokumen audit pabrik.</li>
-        </ul>
-
-        <div class="exp-sub">
-          <div class="sub-title">Penugasan Khusus · Jun–Jul 2025</div>
-          <p><strong>Acting Supervisor Shift Produksi</strong> — dipercaya memimpin, menjadwalkan, dan mengawasi operasional 1 shift regu produksi (85 orang), bukti kesiapan memikul tanggung jawab kepemimpinan berskala besar dalam waktu singkat.</p>
+  <!-- 01 PROFIL -->
+  <section class="sec light" id="profil" data-name="Profil" data-num="01">
+    <div class="wrap">
+      <div class="sh rv"><span class="num">01</span><span class="kicker">Tentang saya</span><h2><span class="mask"><span>Latar belakang singkat</span></span></h2><span class="rule"></span></div>
+      <div class="profil-grid">
+        <div>
+          <p class="profil-text rv" id="profil-text"></p>
+          <div class="tools rv" id="tools" style="--d:.1s"></div>
         </div>
-        <div class="exp-sub">
-          <div class="sub-title">Penugasan Khusus · Agt–Okt 2024</div>
-          <p><strong>Acting Production System Admin (Oracle EBS)</strong> — dipercaya mengelola input &amp; integrasi data produksi, memimpin rekonsiliasi stok fisik vs sistem, menunjukkan kecepatan belajar sistem baru.</p>
+        <div class="rv" style="--d:.15s">
+          <figure class="work-photo opt" id="work-photo" data-photo-wrap data-file="assets/foto/profil-kerja.jpg"><img id="work-img" alt="Ashabul Kahfi saat bekerja" decoding="async"></figure>
+          <ul class="fact" id="fakta"></ul>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="exp-item">
-      <div class="when">Jan 2023 — Apr 2024</div>
-      <div>
-        <div class="exp-role">Admin Lapangan Bahan Packing &amp; Finished Goods</div>
-        <div class="exp-co">PT Ultra Prima Abadi — Jombang, Jawa Timur</div>
-        <ul>
-          <li>Mengelola stok harian bahan kemas (packaging material) &amp; mengajukan permintaan (requisition) ke gudang PPIC saat batas aman stok minimum.</li>
-          <li>Melakukan stok opname harian bahan kemas serta barang jadi (Finished Goods) antara fisik di lapangan dengan pencatatan sistem.</li>
-          <li>Menghitung inventaris barang jadi &amp; memproses transfer fisik dan sistem ke gudang logistik.</li>
-          <li>Mengelola pengembalian (return) kelebihan bahan kemas saat terjadi perubahan varian, gramasi, atau stop production.</li>
-        </ul>
+  <!-- 02 PRINSIP -->
+  <section class="sec dark2" id="prinsip" data-name="Prinsip" data-num="02">
+    <span class="deco a"></span><span class="deco b"></span>
+    <div class="wrap">
+      <div class="sh rv"><span class="num">02</span><span class="kicker">Motto</span><h2><span class="mask"><span>Prinsip kerja saya</span></span></h2><span class="rule"></span></div>
+      <div class="motto rv" role="img" aria-label="Build. Grow. Serve."><span class="mw">Build.</span><span class="mw">Grow.</span><span class="mw">Serve.</span></div>
+      <p class="motto-intro rv" id="pr-intro"></p>
+      <div class="bgs rv" id="bgs"></div>
+    </div>
+  </section>
+
+  <!-- 03 KOMPETENSI -->
+  <section class="sec light2" id="kompetensi" data-name="Kompetensi" data-num="03">
+    <div class="wrap">
+      <div class="sh rv"><span class="num">03</span><span class="kicker">Kompetensi utama</span><h2><span class="mask"><span>Yang saya kuasai</span></span></h2><span class="rule"></span></div>
+      <div class="cgrid" id="cgrid"></div>
+    </div>
+  </section>
+
+  <!-- 04 PENGALAMAN -->
+  <section class="sec dark" id="pengalaman" data-name="Pengalaman" data-num="04">
+    <span class="deco a"></span><span class="deco b"></span>
+    <div class="wrap">
+      <div class="sh rv"><span class="num">04</span><span class="kicker">Pengalaman kerja</span><h2><span class="mask"><span>Dari lantai produksi, selangkah demi selangkah</span></span></h2><span class="rule"></span></div>
+      <div class="stairs rv" id="stairs"></div>
+      <div class="tl" id="tl"></div>
+    </div>
+  </section>
+
+  <!-- 05 GALERI -->
+  <section class="sec light hidden" id="galeri" data-name="Galeri" data-num="05">
+    <div class="wrap">
+      <div class="sh rv"><span class="num">05</span><span class="kicker">Jejak kegiatan</span><h2><span class="mask"><span>Di lapangan dan di komunitas</span></span></h2><span class="rule"></span></div>
+      <div class="gal rv" id="gal"></div>
+    </div>
+  </section>
+
+  <!-- 06 PENDIDIKAN -->
+  <section class="sec light2" id="pendidikan" data-name="Pendidikan" data-num="06">
+    <div class="wrap">
+      <div class="sh rv"><span class="num">06</span><span class="kicker">Pendidikan &amp; organisasi</span><h2><span class="mask"><span>Belajar sambil bekerja</span></span></h2><span class="rule"></span></div>
+      <div class="edu-grid">
+        <div><h3 class="col rv">Pendidikan</h3><div id="edu"></div></div>
+        <div><h3 class="col rv">Organisasi</h3><div id="org"></div></div>
       </div>
     </div>
+  </section>
 
-    <div class="exp-item">
-      <div class="when">Jun 2021 — Jan 2023</div>
-      <div>
-        <div class="exp-role">Operator Produksi</div>
-        <div class="exp-co">PT Ultra Prima Abadi — Jombang, Jawa Timur</div>
-        <ul>
-          <li>Mengoperasikan mesin produksi (carton box, ballmill, enrober, oven, packing machine) secara aman &amp; efisien sesuai penempatan tugas harian.</li>
-          <li>Melakukan setup &amp; penyesuaian (adjustment) parameter mesin sesuai spesifikasi standar produk dan QC.</li>
-          <li>Memantau performa mesin, tindakan korektif awal saat timbul kendala, &amp; mencatat data hasil produksi shift secara presisi.</li>
-        </ul>
+  <!-- 07 KONTAK -->
+  <section class="sec dark kontak" id="kontak" data-name="Kontak" data-num="07">
+    <span class="deco a"></span><span class="deco b"></span>
+    <div class="wrap">
+      <div class="sh rv"><span class="num">07</span><span class="kicker">Kontak</span><h2><span class="mask"><span>Mari berdiskusi</span></span></h2><span class="rule"></span></div>
+      <h2 class="rv" id="k-judul" style="--d:.1s"></h2>
+      <div class="cta rv" id="k-cta" style="--d:.2s"></div>
+      <div class="cgr rv" id="cgr" style="--d:.25s"></div>
+      <div class="foot rv">
+        <b>Build <i>·</i> Grow <i>·</i> Serve</b>
+        <span id="foot-copy"></span>
       </div>
     </div>
+  </section>
+</main>
 
-    <div class="exp-item">
-      <div class="when">Okt 2019 — Nov 2019</div>
-      <div>
-        <div class="exp-role">Magang</div>
-        <div class="exp-co">PT Purbaya Bagelen Mandiri — Tuban, Jawa Timur</div>
-        <ul>
-          <li>Melakukan pemeriksaan &amp; pemeliharaan rutin alat pemadam api ringan (APAR) sesuai standar K3.</li>
-          <li>Memindah &amp; mengawasi pemindahan Liquefied Petroleum Gas (LPG) dari truk pengirim ke tangki penyimpanan.</li>
-          <li>Melakukan inventory check harian stok LPG serta mencatat riwayat pemindahan kendaraan pengangkut.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Lightbox galeri -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Pratinjau foto">
+  <button class="x" type="button" aria-label="Tutup">&times;</button>
+  <button class="p" type="button" aria-label="Foto sebelumnya">&lsaquo;</button>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="n" type="button" aria-label="Foto berikutnya">&rsaquo;</button>
+</div>
 
-<section id="pendidikan">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">Pendidikan &amp; Organisasi</span>
-      <h2>Latar belakang akademik</h2>
-    </div>
-    <div class="two-col">
-      <div>
-        <h3 style="font-size:14px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-soft); margin-bottom:12px; font-family:'IBM Plex Mono',monospace;">Pendidikan</h3>
-        <ul class="list-plain">
-          <li>
-            <div><strong>S1 Program Studi Manajemen</strong><span class="place">Universitas Terbuka</span></div>
-            <span class="when">2022–2026</span>
-          </li>
-          <li>
-            <div><strong>Teknik Pengolahan Minyak, Gas &amp; Petrokimia</strong><span class="place">SMK Negeri 1 Tuban</span></div>
-            <span class="when">2018–2021</span>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3 style="font-size:14px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-soft); margin-bottom:12px; font-family:'IBM Plex Mono',monospace;">Organisasi</h3>
-        <ul class="list-plain">
-          <li>
-            <div><strong>Sekretaris</strong><span class="place">IPNU Desa Leranwetan</span></div>
-            <span class="when">2019–2021</span>
-          </li>
-          <li>
-            <div><strong>Anggota Kebersihan</strong><span class="place">Peduli Lingkungan Dusun Karangdowo</span></div>
-            <span class="when">2019–2021</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+<noscript><p style="position:relative;z-index:999;background:#fff;color:#16212E;padding:20px;text-align:center">Aktifkan JavaScript untuk melihat portofolio ini. Kontak: ashabulkahfi1986@gmail.com | linkedin.com/in/kahfi-ashabul</p></noscript>
 
-<footer id="kontak">
-  <div class="wrap">
-    <span class="kicker">Kontak</span>
-    <h2>Terbuka untuk program Management Trainee lintas departemen.</h2>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <div class="lbl">Email</div>
-        <a href="mailto:ashabulkahfi1986@gmail.com">ashabulkahfi1986@gmail.com</a>
-      </div>
-      <div class="contact-item">
-        <div class="lbl">Telepon</div>
-        <a href="tel:+6283830798271">+62 838 3079 8271</a>
-      </div>
-      <div class="contact-item">
-        <div class="lbl">Lokasi</div>
-        <span>Tuban, Jawa Timur</span>
-      </div>
-      <div class="contact-item">
-        <div class="lbl">LinkedIn</div>
-        <a href="https://www.linkedin.com/in/ashabul-kahfi-444125329" target="_blank" rel="noopener">linkedin.com/in/ashabul-kahfi</a>
-      </div>
-      <div class="contact-item">
-        <div class="lbl">CV</div>
-        <a href="CV-Ashabul-Kahfi-MT.pdf" target="_blank" rel="noopener">Unduh PDF</a>
-      </div>
-      <div class="contact-item">
-        <div class="lbl">Bahasa</div>
-        <span>Indonesia (Native), Inggris (Intermediate)</span>
-      </div>
-    </div>
-    <div class="foot-note">© 2026 Ashabul Kahfi — Halaman ini dibuat sebagai portofolio profesional. Lihat juga versi <a href="index.html" style="color:var(--accent);">Human Resources / Human Capital</a> &middot; <a href="operations.html" style="color:var(--accent);">Production / Manufacturing Operations</a></div>
-  </div>
-</footer>
-
+<script src="js/content.js"></script>
+<script src="js/main.js"></script>
+<script>setTimeout(function(){if(!window.__akReady){document.documentElement.classList.add('failsafe')}},4500);</script>
 </body>
 </html>
